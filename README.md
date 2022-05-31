@@ -1,13 +1,3 @@
-# Angular app that uses Flickr API to search for photos
-
-This is an Angular project showcasing a simple photo lookup using a public Flickr API.
-
-![](demo.gif)
-
-
-More information about Flickr API:
-
-https://www.flickr.com/services/api/
 
 ## Installation
 
