@@ -1,0 +1,102 @@
+<div class="card">
+    <div class="row" id="lis">
+
+        <div class="title">
+            <div class="row">
+                <div class="col">
+                    <h4><b>Lista de Temas</b></h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h4>Filtrar búsqueda</h4>
+                </div>
+            </div>
+            <!--   ....................  -->
+            <div class="row">
+
+
+                <div class="row">
+                    <div class="input-group col s6">
+                        Título
+                        <input type="text" class="form-control" [(ngModel)]="titulo" placeholder="">
+                    </div>
+                    <div class="input-group col s6">
+                        Descripcion
+                        <input type="text" class="form-control" [(ngModel)]="descripcion" placeholder="">
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="input-group col s6">
+                        Fecha de inicio
+                        <input id="ini" type="date" class="form-control" [(ngModel)]="inicio" max="2022-12-31">
+                        <label for="ini"></label>
+                    </div>
+
+
+
+                    <div class="input-group col s6">
+                        Fecha de finalización
+                        <input id="fin" type="date" class="form-control" [(ngModel)]="fin" max="2022-12-31">
+                        <label for="fin"></label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="input-group col  s12">
+                Iniciativa
+                <br>
+                <label for="iniciativa" class="col-form-label col-sm-2"> </label>
+                <select class="browser-default " [ngModelOptions]="{standalone: true}" [(ngModel)]="iniciativa">
+                    <option *ngFor="let iniciativa of iniciativas" [ngValue]="iniciativa">
+                      {{iniciativa.tituloIniciativa}}
+                      </option>
+                  </select>
+                <br>
+            </div>
+
+
+            <button class="btn waves-effect waves-light blue " id="boto" type="button" routerLink="/agretema">Crear Tema</button>
+
+            <button class="btn waves-effect waves-light blue " id="botone" type="button" (click)="getTemasByTituloAndDescripcionAndInicioAndFin()">BUSCAR</button>
+            <button class="btn waves-effect waves-light blue " id="botone" type="button" (click)="handleClear()">LIMPIAR</button>
+            <button class="btn waves-effect waves-light blue " id="botone" (click)='getTemasAll()'>Mostrar Todas</button>
+
+        </div>
+        <div id="listaTemas">
+
+            <div class="row border-top border-bottom border-left">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Descripción</th>
+                            <th>Fecha inicio - fin</th>
+                            <th>Iniciativa</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let temas of temas">
+                            <td>{{ temas.titulo }}</td>
+                            <td>{{ temas.descripcion }}</td>
+                            <td>{{ temas.inicio }} - {{ temas.fin }}</td>
+                            <td>{{ temas.iniciativa.tituloIniciativa }}</td>
+                            <td><a class="btn waves-effect waves-light blue " [routerLink]="['/listaTemas/agretema' , temas.idTema]"> Modificar</a></td>
+                            <td><a class="btn waves-effect waves-light blue " (click)='delete(temas)'>Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>
