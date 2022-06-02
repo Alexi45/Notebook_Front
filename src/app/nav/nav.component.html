@@ -6,6 +6,8 @@
 <ul id="dropdown1" class="dropdown-content">
     <li><a href="/listaIniciativas/form">Añadir Iniciativas</a></li>
     <li><a href="/listaIniciativas">Ver Iniciativas</a></li>
+    <li><a routerLink="agretema" href="/agretema">Crear Temas</a></li>
+    <li><a href="/listaTemas" routerLink="listaTemas">Lista de Temas</a></li>
 </ul>
 
 
@@ -36,13 +38,10 @@
 
         <ul class="right hide-on-med-and-down">
 
-            <li *ngIf="showAdminBoard"><a class="dropdown-trigger" href="#!" data-target="dropdown1">Iniciativas<i
+            <li *ngIf="showAdminBoard"><a class="dropdown-trigger" href="#!" data-target="dropdown1">Temas | Iniciativas<i
                         class="material-icons right">arrow_drop_down</i></a>
             </li>
 
-            <li *ngIf="showAdminBoard"><a class="dropdown-trigger" href="#!" data-target="dropdown4">Temas<i
-                        class="material-icons right">arrow_drop_down</i></a>
-            </li>
             <li *ngIf="showAdminBoard">
                 <a class="dropdown-trigger" href="#!" data-target="dropdown3">Usuario<i
                         class="material-icons right">arrow_drop_down</i></a>

@@ -30,10 +30,12 @@ export class User {
  ceco: string;
  sociedad: string;
  emailAtos: string;
+ name: string;
  iniciativaUser: Iniciativa = null;
 
  constructor(){
   this.username=""
+  this.name=""
   this.email=""
   this.password=""
   this.apellidos=""

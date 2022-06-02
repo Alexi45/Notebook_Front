@@ -1,45 +1,230 @@
-<br>
-<br>
-<div class="col-md-6 offset-md-3 at-dd">
-    <h3 class=''> Actualizar Usuario</h3>
-    <br>
-    <br>
-    <form>
-
-        <div class="form-group">
-            <label> Nombre</label>
-            <input type="text" class="form-control" id="firstName" [(ngModel)]="user.username" name="firstName">
-        </div>
-
-        <div class="form-group">
-            <label> Centro</label>
-            <input type="text" class="form-control" id="center" [(ngModel)]="user.center" name="center">
-        </div>
-
-        <div class="form-group">
-            <label> Apellidos</label>
-            <input type="text" class="form-control" id="apellidos" [(ngModel)]="user.apellidos" name="apellidos">
-        </div>
-
-        <div class="form-group">
-            <label> Localizacion</label>
-            <input type="text" class="form-control" id="location" [(ngModel)]="user.location" name="location">
-        </div>
-
-        <div class="form-group">
-            <label> Ceco</label>
-            <input type="text" class="form-control" id="ceco" [(ngModel)]="user.ceco" name="ceco">
-        </div>
-
-        <div class="form-group">
-            <label> DAS</label>
-            <input type="text" class="form-control" id="das" [(ngModel)]="user.das" name="das">
-        </div>
-
-
-        <br>
-        <button id="cancelar" class="btn waves-effect waves-light blue" (click)="onUpdate()" type="button">Actualizar</button>
-        <button id="cancelar" class="btn waves-effect waves-light blue " routerLink="/admin">Cancelar</button>
-    </form>
+<div class="row">
+    <div class="col s12 center">
+        <h1> <b>Actualizacion de usuario</b></h1>
+    </div>
 </div>
+<form>
+
+    <div class="row">
+        <div class="offset-l4 input-field col l2 s12">
+            Nombre de Usuario
+            <input type="text" class="validate" name="username" [(ngModel)]="user.username" required minlength="3" maxlength="20" #username="ngModel" />
+            <label for="username"></label>
+        </div>
+
+        <div class="input-field col l2 s12">
+            Contraseña
+            <label for="password"></label>
+            <input type="password" class="validate" name="password" [(ngModel)]="user.password" required minlength="6" #password="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">Email*
+            <input type="text" class="validate" name="email" [(ngModel)]="user.email" required email #email="ngModel" />
+            <label for="email"></label>
+        </div>
+        <div class="input-field col l2 s12">
+            Localización*
+            <label for="location"></label>
+            <input type="text" class="validate" name="Location" [(ngModel)]="user.location" required minlength="3" maxlength="20" location #location="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">Nombre*
+            <input type="text" class="validate" name="name" [(ngModel)]="user.name" required minlength="3" maxlength="20" #name="ngModel" />
+            <label for="name"></label>
+
+
+
+
+        </div>
+
+
+        <div class="input-field col l2 s12">
+            Apellidos <input type="text" class="validate" name="Apellido" [(ngModel)]="user.apellidos" required minlength="3" maxlength="20" #apellidos="ngModel" />
+
+            <label for="apellidos"></label>
+        </div>
+
+
+        <div class="offset-l4 input-field col l2 s12">
+            Centro Formativo <label for="center"></label>
+            <input type="text" class="validate" name="center" [(ngModel)]="user.center" minlength="3" maxlength="20" required center #center="ngModel" />
+
+        </div>
+
+        <div class="input-field col l2 s12">
+            DAS <label for="das"></label>
+            <input type="text" class="validate" name="das" [(ngModel)]="user.das" required minlength="3" maxlength="20" #das="ngModel" />
+
+        </div>
+
+
+        <div class="offset-l4 input-field col l2 s12">
+            Profesor <label for="teacher"></label>
+            <input type="text" class="validate" name="teacher" [(ngModel)]="user.teacher" minlength="3" maxlength="20" #teacher="ngModel" />
+
+        </div>
+
+        <div class="input-field col l2 s12">
+            Nombre de grupo de Teams <label for="nameGroupTeams"></label>
+            <input type="text" class="validate" name="nameGroupTeams" [(ngModel)]="user.nameGroupTeams" minlength="3" maxlength="20" nameGroupTeams #nameGroupTeams="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            Grupo de Proyecto <label for="groupProyect"></label>
+            <input type="text" class="validate" name="groupProyect" [(ngModel)]="user.groupProyect" minlength="3" maxlength="20" #groupProyect="ngModel" />
+
+        </div>
+
+
+
+        <div class="input-field col l2 s12">
+            DNI <label for="dni" pattern="((\d{8})([-]?)([A-Z]{1}))"></label>
+            <input type="text" class="validate" name="dni" [(ngModel)]="user.dni" minlength="3" maxlength="20" #dni="ngModel" />
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            Fecha de nacimiento
+            <input type="date" class="datepicker" name="fechaNacimiento" [(ngModel)]="user.fechaNacimiento" fechaNacimiento #fechaNacimiento="ngModel" min="2018-01-01" max="2025-12-31">
+            <label for="fechaNacimiento"></label>
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            Fecha inicial de FCT
+            <input type="date" class="datepicker" name="fechaFCT" [(ngModel)]="user.fechaFCT" #fechaFCT="ngModel" min="2018-01-01" max="2025-12-31">
+            <label for="fechaFCT"></label>
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            Fecha final de FCT
+            <input type="date" class="datepicker" placeholder="Fecha final de FCT" name="email" [(ngModel)]="user.finFCT" finFCT #finFCT="ngModel" min="2018-01-01" max="2025-12-31">
+            <label for="finFCT"></label>
+
+        </div>
+
+        <div class="input-field col l2 s12">
+            Tipo <label for="tipo"></label>
+            <input type="text" class="validate" name="tipo" [(ngModel)]="user.tipo" minlength="3" maxlength="20" #tipo="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            PO <label for="po"></label>
+            <input type="text" class="validate" name="po" [(ngModel)]="user.po" minlength="3" maxlength="20" po #po="ngModel" />
+
+        </div>
+
+        <div class="input-field col l2 s12">
+            Numero de Seguridad Social <label for="ss"></label>
+            <input type="text" class="validate" name="ss" [(ngModel)]="user.ss" minlength="3" maxlength="20" #ss="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            RR<label for="rr"></label>
+            <input type="text" class="validate" name="rr" [(ngModel)]="user.rr" rr #rr="ngModel" minlength="3" maxlength="20" />
+
+        </div>
+
+        <div class="input-field col l2 s12">
+            Becas <label for="becas"></label>
+            <input type="text" class="validate" name="becas" [(ngModel)]="user.becas" minlength="3" maxlength="20" #becas="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            Ceco
+            <label for="ceco"></label>
+            <input type="text" class="validate" name="ceco" [(ngModel)]="user.ceco" minlength="3" maxlength="20" ceco #ceco="ngModel" />
+
+        </div>
+
+        <div class="input-field col l2 s12">
+            Organizacion de Unit <label for="orgUnit"></label>
+            <input type="text" class="validate" name="orgUnit" [(ngModel)]="user.orgUnit" minlength="3" maxlength="20" #orgUnit="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            Sociedad <label for="sociedad"></label>
+            <input type="text" class="validate" name="sociedad" [(ngModel)]="user.sociedad" minlength="3" maxlength="20" sociedad #sociedad="ngModel" />
+
+        </div>
+
+        <div class="input-field col l2 s12">
+            Telefono <label for="phone"></label>
+            <input type="text" class="validate" name="phone" [(ngModel)]="user.phone" minlength="3" maxlength="20" #phone="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            Email de ATOS<label for="emailAtos"></label>
+            <input type="text" class="validate" name="emailAtos" [(ngModel)]="user.emailAtos" minlength="3" maxlength="20" emailAtos #emailAtos="ngModel" />
+
+        </div>
+
+
+
+        <div class="input-field col l2 s12">
+            Convenio <label for="convenio"></label>
+            <input type="text" class="validate" name="convenio" [(ngModel)]="user.convenio" minlength="3" maxlength="20" convenio #convenio="ngModel" />
+
+        </div>
+
+        <div class="offset-l4 input-field col l2 s12">
+            Contacto <label for="contacto"></label>
+            <input type="text" class="validate" name="contacto" [(ngModel)]="user.contacto" minlength="3" maxlength="20" #contacto="ngModel" />
+
+        </div>
+
+        <div class="input-field col l2 s12">
+            Posicion de ID <label for="positionId"></label>
+            <input type="text" class="validate" name="positionId" [(ngModel)]="user.positionId" minlength="3" positionId #positionId="ngModel" />
+
+        </div>
+
+
+        <div class="offset-l4 input-field col l2 s12">
+            Iniciativa
+            <label for="iniciativa" class="col-form-label col-sm-2"><span id="obligatorio"> </span></label>
+            <select class="browser-default" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.iniciativaUser" #iniciativaUser="ngModel">
+                <option *ngFor="let iniciativa of iniciativas" [ngValue]="iniciativa">
+                    {{iniciativa.tituloIniciativa}}
+                </option>
+            </select>
+
+        </div>
+
+
+        <div class="input-field col l2 s6">
+            Tipo de Usuario
+            <select class="browser-default" name="u" [(ngModel)]="user.u" required minlength="2" #i="ngModel">
+                <option hidden selected>Selecciona una opción</option>
+                <option value="gestor">Gestor</option>
+                <option value="tutor">Tutor</option>
+                <option value="alumno">Usuario</option>
+
+            </select><label for="u"></label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="offset-l2 input-field col l2 s12">
+        </div>
+
+        <div class="input-field col l2 s6">
+            <button id="cancelar" class="btn waves-effect waves-light blue" (click)="onUpdate()">Actualizar Usuario</button>
+
+        </div>
+        <div class="input-field col l2 s6">
+            <button id="cancelar" class="btn waves-effect waves-light blue " routerLink="/admin">Cancelar</button>
+
+        </div>
+    </div>
+</form>
+
 <br>

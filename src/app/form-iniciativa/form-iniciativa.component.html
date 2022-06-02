@@ -59,7 +59,7 @@
                     <button class="btn waves-effect waves-light blue" id="create" role="button" (click)='create()' *ngIf="!iniciativa.idIniciativa else elseBlock">Crear</button>
 
                     <ng-template #elseBlock>
-                        <button class="btn waves-effect waves-light blue " id="create" role="button" (click)='update()'>Editar</button>
+                        <button class="btn waves-effect waves-light blue " id="create" role="button" (click)='update()'>Guardar</button>
                     </ng-template> <button id="cancelar" class="btn waves-effect waves-light blue " routerLink="/listaIniciativas">Cancelar</button>
                 </div>
             </div>
